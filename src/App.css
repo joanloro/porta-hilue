@@ -1,0 +1,15 @@
+:root {
+  /* Fondo muy claro, no blanco puro */
+  --bg-color: #121214;
+
+   --bg-secondary-color: #1A1A23; 
+  /* Texto muy oscuro */
+  --text-color: #FFFFFF;
+
+  --text-secondary-color: #FFD400;
+  /* Azul Vibrante (Primary) */
+  --primary-color: #680470;
+  /* Azul más oscuro para secundarios o hover */
+  --secondary-color: #B55FC9;
+
+}

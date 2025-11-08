@@ -1,0 +1,118 @@
+{
+  "nombre": "Hilue Zuñiga Morales",
+  "subtitulo": "PORTAFOLIO ARTÍSTICO",
+  "rol": "ACTRIZ",
+  "edad": 23,
+  "bio": "Artista cartagenera con más de cinco años de experiencia en la actuación. Mi pasión por el arte me ha llevado a explorar la danza, el maquillaje, el modelaje, las artes circenses y lo audiovisual. Me caracterizo por mi disciplina, creatividad y apertura a los retos.",
+  "manifiesto": "Mi creación nace desde el cuerpo como territorio poético, memoria y resistencia. El teatro es mi raíz, pero mi camino se expande hacia la fotografía, el cine, el maquillaje, el modelaje y la comunicación. Exploro la acrobacia, el ballet, la tela aérea y las artes circenses, convencida de que el cuerpo puede transformarse en símbolo y puente con el espectador.",
+  "contacto": {
+    "email": "hiluez15@gmail.com",
+    "telefono": "+57 3229087527",
+    "instagram": "hilu_05",
+    "tiktok": "@hiluelucia"
+  },
+  "proyectos": [
+    {
+      "titulo": "Cartagena Resiliente",
+      "tipo": "Exposición fotográfica",
+      "lugar": "Cooperación Española",
+      "colectivo": "EUFORIA ft Imagina Cartagena Lab",
+      "fecha": "11/09/2025 - 19/10/2025",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54907107936_075acfc78d_b.jpg",
+        "https://live.staticflickr.com/65535/54907331023_19128bc288_b.jpg",
+        "https://live.staticflickr.com/65535/54907359634_b3a5a6cdc3_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Las Troyanas (lectura dramática)",
+      "lugar": "Biblioteca de Fredonia (Sala Atahualpa)",
+      "duracion": "40 minutos",
+      "direccion": "Jorge Naizir",
+      "fecha": "25/09/2025",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54907107931_aa974d2f25_b.jpg",
+        "https://live.staticflickr.com/65535/54907108061_724530ec74_b.jpg",
+        "https://live.staticflickr.com/65535/54907421395_3891cfa775_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Manifiesto",
+      "lugar": "Cooperación Española",
+      "colectivo": "EUFORIA ft Imagina Cartagena Lab",
+      "duracion": "20 minutos",
+      "direccion": "Laura Villa",
+      "fecha": "11/09/2025",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54906238127_62208213d9_b.jpg",
+        "https://live.staticflickr.com/65535/54907106971_7b6f28e73f_b.jpg",
+        "https://live.staticflickr.com/65535/54906238102_eab2f7ac5d_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Historias del río (versión libre)",
+      "lugar": "Clemencia",
+      "colectivo": "EUFORIA",
+      "duracion": "20 minutos",
+      "direccion": "Laura Villa",
+      "fecha": "30/05/2025",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54907331933_a46bce97e0_b.jpg",
+        "https://live.staticflickr.com/65535/54907331928_00f838da77_b.jpg",
+        "https://live.staticflickr.com/65535/54909117773_1e5d9be9c6_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Himmelweg - Camino del cielo",
+      "institucion": "Universidad de Bellas Artes y Ciencias de Bolívar",
+      "duracion": "1 hora y 40 minutos",
+      "direccion": "Yasser Ballestas",
+      "fecha": "26/05/2025",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54906239072_d0fb428f66_b.jpg",
+        "https://live.staticflickr.com/65535/54907331993_dd55515317_b.jpg",
+        "https://live.staticflickr.com/65535/54907421295_46ba8394ff_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Los hijos de las flores",
+      "institucion": "Universidad de Bellas Artes y Ciencias de Bolívar",
+      "duracion": "1 hora y 20 minutos",
+      "direccion": "Karina Barrios",
+      "fecha": "20/11/2024 y 05/12/2024",
+      "imagenes": [
+       "https://live.staticflickr.com/65535/54907331998_827438a04e_b.jpg",
+        "https://live.staticflickr.com/65535/54907421355_1d1d1e91c2_b.jpg",
+        "https://live.staticflickr.com/65535/54907360744_13d2bc2a54_b.jpg"
+      ]
+    },
+    {
+      "titulo": "Shakespeare en confesión",
+      "institucion": "Universidad de Bellas Artes y Ciencias de Bolívar",
+      "duracion": "1 hora y 20 minutos",
+      "direccion": "Karina Barrios",
+      "fecha": "13/06/2024",
+      "imagenes": [
+        "https://live.staticflickr.com/65535/54906239127_a04f5649ca_b.jpg",
+        "https://live.staticflickr.com/65535/54907332033_4660c659e1_b.jpg",
+        "https://live.staticflickr.com/65535/54907421380_a4c46ae7ab_b.jpg"
+      ]
+    }
+  ],
+  "fotos": [
+    "https://live.staticflickr.com/65535/54907107931_aa974d2f25_b.jpg",
+    "https://live.staticflickr.com/65535/54907421355_1d1d1e91c2_b.jpg",
+    "https://live.staticflickr.com/65535/54907331993_dd55515317_b.jpg",
+    "https://live.staticflickr.com/65535/54906240107_481efef445_b.jpg",
+    "https://live.staticflickr.com/65535/54907361449_3a37234965_b.jpg",
+    "https://live.staticflickr.com/65535/54907107986_0bf38cde24_b.jpg",
+    "https://live.staticflickr.com/65535/54907107936_075acfc78d_b.jpg",
+    "https://live.staticflickr.com/65535/54907422175_8bccf853c1_b.jpg",
+    "https://live.staticflickr.com/65535/54907108621_c8dc8e8431_b.jpg",
+    "https://live.staticflickr.com/65535/54907360719_e2b338dec8_b.jpg",
+    "https://live.staticflickr.com/65535/54907361504_2738089fff_b.jpg",
+    "https://live.staticflickr.com/65535/54907360759_d4dd945b37_b.jpg",
+    "https://live.staticflickr.com/65535/54906240102_e30949a245_b.jpg"
+  ]
+
+}

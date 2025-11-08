@@ -1,0 +1,94 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  padding: 0.2rem 0rem;
+  background: var(--bg-secondary-color);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(181, 95, 201, 0.22);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.logo {
+  position: absolute;
+  left: 5rem;
+  height: 70%;
+  width: auto;
+  object-fit: contain;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  opacity: 0.9;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.5rem 0.25rem;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.navLink:hover {
+  color: var(--text-secondary-color);
+  opacity: 1;
+}
+
+.navLink:hover::after {
+  width: 80%;
+}
+
+/* Activa desde React (styles.active) */
+.active {
+  color: var(--text-secondary-color);
+}
+
+.active::after {
+  width: 80%;
+  background: var(--text-secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .navList { gap: 1rem; }
+  .logo { height: 0px; }
+  .navLink { font-size: 0.85rem; }
+}
+
+@media (max-width: 600px) {
+  .nav { padding: 0.5rem 0.75rem; }
+  .navList { gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+  .logo { height: 0px; }
+  .navLink { font-size: 0.78rem; letter-spacing: 0.8px; }
+}
