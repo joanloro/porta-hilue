@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import styles from './home.module.css';
+import styles from './Portada.module.css';
 import data from '../../../data/data.json';
 
-export default function Home() {
+export default function Portada() {
   const [info, setInfo] = useState(null);
 
   useEffect(() => {

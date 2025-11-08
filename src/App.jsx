@@ -7,13 +7,13 @@ import AboutMe from './Sections/AboutMe/AboutMe.jsx'
 import Book from './Sections/Book/Book.jsx'
 import Muestras from './Sections/Muestras/Muestras.jsx'
 import Contacto from './Sections/Contacto/Contacto.jsx'
-import Home from './Sections/home/home.jsx'
+import Portada from './Sections/Portada/Portada.jsx'
 
 function App() {
   return (
     <div>
       <NavBar />
-      <Home/>
+      <Portada/>
       <AboutMe />
       <Muestras />
       <Book />
