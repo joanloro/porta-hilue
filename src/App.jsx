@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Home />
+      <Home/>
       <AboutMe />
       <Muestras />
       <Book />
