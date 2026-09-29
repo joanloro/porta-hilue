@@ -10,7 +10,7 @@ export default function Portada() {
         alt="Hilue Zuñiga en escena"
         sizes="100vw"
         priority
-        maxWidth={1600}
+        maxWidth={1024}
         className={styles.fotoFondo}
       />
       <div className={styles.container}>

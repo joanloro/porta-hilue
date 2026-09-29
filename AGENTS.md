@@ -84,11 +84,15 @@ Están hotlinked desde Flickr (`live.staticflickr.com`). **Nunca escribas un `<i
   src={url}
   alt="Descripción real"          // obligatorio
   sizes="(max-width: 640px) 100vw, 33vw"   // obligatorio: sin esto el srcset no sirve
-  maxWidth={1024}                 // ancho máximo a generar
+  maxWidth={1024}                 // cota superior de los tamaños a generar
   priority                         // sólo para la imagen LCP (la portada)
   className={styles.miClase}
 />
 ```
+
+**No inventes sufijos de Flickr.** Sólo existen hasta el tamaño del original. Verificado contra las fotos de `data.json`: `_n` 320w, `_z` 640w, `_c` 800w y `_b` 1024w existen; **`_h` 1600w no existe en ninguna** y da 404. Un sufijo inexistente en el `srcset` rompe la imagen en pantallas de alta densidad, no sólo la Optimiza peor. Si se suben fotos más grandes, agregá el sufijo a `FLICKR_SIZES` después de comprobarlo con `curl -o /dev/null -w "%{http_code}" <url>`.
+
+Si alguna vez tocás `SIZE_SUFFIX` o `resize`, verificá la URL generada: el reemplazo es por función a propósito, para que un cambio en el número de grupos del regex no desalinee los índices. Con `"$1"` en un template string, un grupo inexistente queda literal y produce URLs como `..._c.$1`.
 
 ## Diseño
 
