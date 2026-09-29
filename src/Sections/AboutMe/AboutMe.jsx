@@ -1,29 +1,26 @@
-import { useState, useEffect } from 'react';
 import styles from './AboutMe.module.css';
+import SmartImage from '../../Components/SmartImage/SmartImage.jsx';
 import data from '../../../data/data.json';
 
 export default function AboutMe() {
-  const [info, setInfo] = useState(null);
-
-  useEffect(() => {
-    setInfo(data);
-  }, []);
-
-  if (!info) return null;
-
   return (
     <section id="about" className={styles.section}>
       <div className={styles.container}>
-        <img src="https://live.staticflickr.com/65535/54907422320_793ba1d7ca_b.jpg" width="683" height="1024" alt="17082025-IMG_5661"/>
+        <SmartImage
+          src="https://live.staticflickr.com/65535/54907422320_793ba1d7ca_b.jpg"
+          alt="Retrato de Hilue Zuñiga"
+          sizes="(max-width: 1024px) 100vw, 40vw"
+          maxWidth={1024}
+          className={styles.retrato}
+        />
         <div className={styles.content}>
-          <div className={styles.bioSection}>
-            <h3 className={styles.subtitle}>Sobre mí</h3>
-            <p className={styles.bio}>{info.bio}</p>
+          <div className={styles.bloque}>
+            <h2 className={styles.subtitle}>Sobre mí</h2>
+            <p className={styles.bio}>{data.bio}</p>
           </div>
-
-          <div className={styles.manifiestoSection}>
-            <h3 className={styles.subtitle}>Mi Manifiesto</h3>
-            <p className={styles.manifiesto}>{info.manifiesto}</p>
+          <div className={styles.bloque}>
+            <h2 className={styles.subtitle}>Mi manifiesto</h2>
+            <p className={styles.manifiesto}>{data.manifiesto}</p>
           </div>
         </div>
       </div>

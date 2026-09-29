@@ -1,68 +1,60 @@
 .section {
-  width: 100vw;
-  min-width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0rem 0rem;
-  background-color: var(--bg-color);
   position: relative;
+  padding: calc(var(--nav-height) + 4rem) var(--gutter) 5rem;
+  background-color: var(--bg-color);
+  scroll-margin-top: var(--nav-height);
 }
 
 .section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(104, 4, 112, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(181, 95, 201, 0.1) 0%, transparent 50%);
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(104, 4, 112, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(181, 95, 201, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .container {
-  max-width: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: center;
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 
-.container img {
+.retrato {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.container img:hover {
-  transform: translateY(-5px) scale(1.001);
-  box-shadow: 0 5px 10px var(--primary-color);
+.retrato:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--primary-color);
 }
 
 .content {
   display: flex;
   flex-direction: column;
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+  min-width: 0;
 }
-
-.bioSection,
-.manifiestoSection {
-  padding: 0 2rem;
-}
-
 
 .subtitle {
-  font-size: 2rem;
-  color: var(--text-secondary-color);
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
   position: relative;
   display: inline-block;
+  margin: 0 0 1.2rem;
+  color: var(--text-secondary-color);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .subtitle::after {
@@ -78,75 +70,31 @@
 
 .bio,
 .manifiesto {
-  font-size: 1.2rem;
-  line-height: 1.9;
+  margin: 0;
   color: var(--text-color);
+  font-size: clamp(0.98rem, 0.6vw + 0.85rem, 1.15rem);
+  line-height: 1.85;
   text-align: justify;
+  hyphens: auto;
   opacity: 0.95;
-  width: 70%;
 }
 
-
-
-/* Responsive */
 @media (max-width: 1024px) {
   .container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .container img {
-    max-width: 500px;
+  .retrato {
+    max-width: 480px;
     margin: 0 auto;
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 0rem 0rem;
-  }
-
-  .subtitle {
-    font-size: 1.6rem;
-  }
-
+@media (max-width: 640px) {
   .bio,
   .manifiesto {
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .bioSection,
-  .manifiestoSection {
-    padding: 2rem;
-  }
-
-  .container img {
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 0rem 0rem;
-  }
-
-  .content {
-    gap: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-  }
-
-  .bioSection,
-  .manifiestoSection {
-    padding: 1.5rem;
-  }
-
-  .bio::first-letter,
-  .manifiesto::first-letter {
-    font-size: 2rem;
+    text-align: left;
+    hyphens: none;
+    line-height: 1.75;
   }
 }

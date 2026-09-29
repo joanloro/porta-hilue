@@ -1,25 +1,22 @@
-import { useState, useEffect } from 'react';
 import styles from './Portada.module.css';
+import SmartImage from '../../Components/SmartImage/SmartImage.jsx';
 import data from '../../../data/data.json';
 
 export default function Portada() {
-  const [info, setInfo] = useState(null);
-
-  useEffect(() => {
-    setInfo(data);
-  }, []);
-
-  if (!info) return null;
-
   return (
     <section id="welcome" className={styles.section}>
-        <img className={styles.fotoFondo} src="https://live.staticflickr.com/65535/54907108966_9d3a7397d1_b.jpg"  alt="17082025-IMG_5754"/>
+      <SmartImage
+        src="https://live.staticflickr.com/65535/54907108966_9d3a7397d1_b.jpg"
+        alt="Hilue Zuñiga en escena"
+        sizes="100vw"
+        priority
+        maxWidth={1600}
+        className={styles.fotoFondo}
+      />
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h1 className={styles.nombre}>{info.nombre}</h1>
-          <h2 className={styles.subtitulo}>{info.subtitulo}</h2>
-          <h2 className={styles.rol}>{info.rol}</h2>
-        </div>
+        <h1 className={styles.nombre}>{data.nombre}</h1>
+        <p className={styles.subtitulo}>{data.subtitulo}</p>
+        <p className={styles.rol}>{data.rol}</p>
       </div>
     </section>
   );

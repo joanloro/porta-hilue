@@ -1,32 +1,25 @@
-import { useState, useEffect } from 'react';
 import styles from './Book.module.css';
+import SmartImage from '../../Components/SmartImage/SmartImage.jsx';
 import data from '../../../data/data.json';
 
 export default function Book() {
-  const [fotos, setFotos] = useState([]);
-
-  useEffect(() => {
-    if (data.fotos) {
-      setFotos(data.fotos);
-    }
-  }, []);
-
   return (
     <section id="book" className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>MI GALERÍA</h2>
-        <div className={styles.gallery}>
-          {fotos.map((foto, index) => (
-            <div key={index} className={styles.galleryItem}>
-              <img 
-                src={foto} 
-                alt={`Foto ${index + 1}`}
+        <ul className={styles.gallery}>
+          {data.fotos.map((foto, index) => (
+            <li key={foto} className={styles.galleryItem}>
+              <SmartImage
+                src={foto}
+                alt={`Foto ${index + 1} de la galería`}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                maxWidth={1024}
                 className={styles.galleryImage}
-                loading="lazy"
               />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

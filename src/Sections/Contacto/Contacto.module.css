@@ -1,14 +1,11 @@
 .section {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-margin-top: 80px;
-  padding: 0rem 0rem;
-  background-color: var(--bg-color);
   position: relative;
+  display: grid;
+  place-items: center;
+  padding: calc(var(--nav-height) + 4rem) var(--gutter) 5rem;
+  background-color: var(--bg-color);
   overflow: hidden;
+  scroll-margin-top: var(--nav-height);
 }
 
 .section::before {
@@ -19,131 +16,88 @@
     radial-gradient(circle at 20% 50%, rgba(104, 4, 112, 0.12) 0%, transparent 45%),
     radial-gradient(circle at 80% 80%, rgba(181, 95, 201, 0.12) 0%, transparent 45%);
   pointer-events: none;
-  z-index: 0;
 }
 
 .container {
-  max-width: 1200px;
-  width: 100%;
-  text-align: center;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  text-align: center;
 }
 
 .title {
-  font-size: 2.6rem;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
   color: var(--text-secondary-color);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 800;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
   color: var(--text-color);
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   opacity: 0.85;
-  margin-bottom: 3rem;
 }
 
-/* Grid de tarjetas de contacto */
 .contactGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* Tarjeta */
 .contactCard {
-  background: var(--bg-secondary-color);
-  padding: 1.75rem;
-  border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  text-decoration: none;
-  color: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
+  height: 100%;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background: var(--bg-secondary-color);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .contactCard:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(181, 95, 201, 0.35);
+  box-shadow: 0 12px 28px rgba(104, 4, 112, 0.35);
 }
 
-.contactCard:focus-visible {
-  outline: 2px solid rgba(181, 95, 201, 0.45);
-  outline-offset: 3px;
-}
-
-/* Icono */
 .icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 999px;
   display: grid;
   place-items: center;
-  font-size: 1.6rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
   color: var(--text-secondary-color);
   background: linear-gradient(135deg, rgba(104, 4, 112, 0.22), rgba(181, 95, 201, 0.22));
   box-shadow: 0 10px 28px rgba(104, 4, 112, 0.35);
 }
 
-/* Textos */
+.icon svg {
+  width: 26px;
+  height: 26px;
+}
+
 .contactTitle {
-  font-size: 1.2rem;
-  color: var(--text-secondary-color);
-  font-weight: 700;
   margin: 0.25rem 0 0;
+  color: var(--text-secondary-color);
+  font-size: 1.2rem;
+  font-weight: 700;
   letter-spacing: 0.3px;
 }
 
 .contactInfo {
-  font-size: 0.98rem;
-  color: var(--text-color);
   margin: 0;
-  opacity: 0.95;
-  word-break: break-word;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 1.5rem 3rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .contactGrid {
-    gap: 1rem;
-  }
-
-  .contactCard {
-    padding: 1.5rem;
-  }
-
-  .icon {
-    width: 56px;
-    height: 56px;
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.8rem;
-  }
+  color: var(--text-color);
+  font-size: clamp(0.9rem, 2vw, 0.98rem);
+  overflow-wrap: anywhere;
 }
