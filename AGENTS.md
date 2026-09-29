@@ -29,14 +29,25 @@ npm run preview   # sirve el build de producción
 npm run lint      # ESLint — debe quedar en verde
 ```
 
-No hay tests, ni formatter, ni CI. `npm run lint` y `npm run build` son la verificación.
+No hay tests, ni formatter. `npm run lint` y `npm run build` son la verificación local; el CI corre ambos antes de publicar.
+
+## Despliegue
+
+GitHub Pages vía GitHub Actions. Cada push a `main` dispara `.github/workflows/deploy.yml`, que hace `npm ci` → `lint` → `build` → publica `dist/`.
+
+- `base` en `vite.config.js` es `/porta-hilue/`, que corresponde al nombre del repositorio. **Cambiar el nombre del repo en GitHub obliga a cambiar ese `base`**, o todos los assets dan 404. Con dominio propio, `base` pasa a ser `'/'`.
+- El workflow corre `npm run lint`: un error de ESLint bloquea el despliegue.
+- `public/.nojekyll` evita que Jekyll interprete los archivos del build.
+- La navegación es por anclas `#id`, no hay router, así que no hace falta `404.html` de fallback SPA.
+- `VITE_BASE` sobreescribe el `base` en el build, por si se necesita una URL distinta.
 
 ## Estructura
 
 ```
 index.html              Shell; también contiene el SEO (title, description, OG, theme-color)
-vite.config.js          Sólo el plugin de React. Sin aliases ni variables de entorno
+vite.config.js          Plugin de React + `base` para GitHub Pages
 eslint.config.js        Flat config; ignora dist/
+.github/workflows/      deploy.yml: build + publish a GitHub Pages en cada push a main
 data/
   data.json             ÚNICA fuente de contenido (bio, contacto, proyectos, fotos)
   logo.png              Logo del nav
