@@ -1,6 +1,6 @@
 # porta-hilue
 
-Portafolio artístico de una actriz. SPA de una sola página, contenido en español, tema oscuro.
+Portafolio artístico de una actriz. SPA de una sola página, contenido en español, tema claro crema con acentos burdeos.
 
 ## Qué es
 
@@ -97,21 +97,25 @@ Si alguna vez tocás `SIZE_SUFFIX` o `resize`, verificá la URL generada: el ree
 
 ## Diseño
 
-Tokens en `src/index.css`, consumidos como `var(--nombre)` desde los CSS Modules:
+Tokens en `src/index.css`, consumidos como `var(--nombre)` desde los CSS Modules. **La paleta tiene una sola definición, ahí.** No escribas un color literal en un CSS Module: derivá el tint con `color-mix(in srgb, var(--wine) 14%, transparent)`. Si aparece un hex suelto fuera de `:root`, es un bug.
 
-| Token | Uso |
-|---|---|
-| `--bg-color` | Fondo de página |
-| `--bg-secondary-color` | Tarjetas y superficies elevadas |
-| `--text-color` | Texto principal |
-| `--text-secondary-color` | Acento: títulos, etiquetas, hover |
-| `--primary-color` / `--secondary-color` | Morados, para degradados y sombras |
-| `--nav-height` | Alto de la nav. **La lee también JS** vía `getComputedStyle` |
-| `--gutter` | Padding lateral de todas las secciones |
+Paleta:
+
+| Color | Hex | Token | Rol | Contraste |
+|---|---|---|---|---|
+| Crema | `#F7EEE0` | `--cream` | Fondo de la portada, texto sobre foto | — |
+| Burdeos | `#6C0028` | `--burgundy`, `--text-color`, `--primary-color` | Texto y estructura | 10.95:1 sobre crema (AAA) |
+| Vino | `#9D3052` | `--wine`, `--text-secondary-color` | Acentos, títulos, etiquetas | 6.13:1 sobre crema (AA) |
+| Rosa | `#BF6676` | `--rose`, `--secondary-color` | **Sólo decorativo** | 3.40:1 — insuficiente para texto |
+
+`--bg-secondary-color` es `#FFFFFF`: el único color fuera de la paleta, porque las tarjetas necesitan separarse de la crema. `--rose` nunca debe ser color de texto en ningún tamaño; usalo en bordes, hover, degradados e indicadores.
+
+**La portada es la excepción al sistema de texto.** Su texto va sobre la foto con un scrim burdeos, así que usa `--cream` y `--rose`, no `--text-color`. Si le ponés burdeos, desaparece.
 
 Reglas transversales:
 
-- **Una sola fuente de verdad de estilos globales.** `index.css` es el único stylesheet no-module. No crees otro, ni reintroduzcas un `App.css` con tokens duplicados.
+- **Una sola fuente de verdad de estilos globales.** `index.css` es el único stylesheet no-module y el único lugar donde se define un color. No crees otro, ni reintroduzcas un `App.css` con tokens duplicados.
+- **Ningún color literal fuera de `:root`.** Para transparencias y degradados usá `color-mix()` sobre un token. Antes de hardcodear un `rgba()`, comprobá que no se pueda derivar.
 - **Todo en `clamp()` o `minmax(min(100%, X), Y)`.** Los anchos fijos en `px` y las fuentes fijas rompen el diseño; es el motivo principal por el que se rehízo el responsive.
 - **Secciones:** `padding: calc(var(--nav-height) + 4rem) var(--gutter) 5rem` + `scroll-margin-top: var(--nav-height)`, porque la nav es `position: fixed`.
 - **Nunca `100vw`** para ancho de sección: ignora el `scrollbar` y genera scroll horizontal. Usa `100%` con `box-sizing: border-box` global.

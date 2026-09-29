@@ -1,23 +1,31 @@
 :root {
-  /* Fondo oscuro principal */
-  --bg-color: #121214;
-  /* Fondo de tarjetas y superficies elevadas */
-  --bg-secondary-color: #1a1a23;
-  /* Texto principal */
-  --text-color: #ffffff;
-  /* Acento para títulos y énfasis */
-  --text-secondary-color: #ffd400;
-  /* Morado profundo, primario */
-  --primary-color: #680470;
-  /* Morado claro, secundario y hover */
-  --secondary-color: #b55fc9;
+  /* Paleta. Única fuente: los tints se derivan con color-mix(), nunca a mano,
+     para que cambiar un color acá se propague a todo el sitio. */
+  --cream: #f7eee0;
+  --burgundy: #6c0028;
+  --wine: #9d3052;
+  --rose: #bf6676;
+
+  /* Fondo de página */
+  --bg-color: var(--cream);
+  /* Superficies elevadas: tarjetas, panel del nav. Blanco neutro para que
+     las fotos respiren sobre la crema; es el único color fuera de la paleta. */
+  --bg-secondary-color: #ffffff;
+  /* Texto principal sobre crema: 10.95:1 (AAA) */
+  --text-color: var(--burgundy);
+  /* Acento en títulos y etiquetas: 6.13:1 (AA). NO usar para texto corrido. */
+  --text-secondary-color: var(--wine);
+  /* Estructural: sombras, bordes, degradados */
+  --primary-color: var(--burgundy);
+  /* Decorativo: bordes, hover, indicadores. Nunca texto: 3.40:1 sobre crema. */
+  --secondary-color: var(--rose);
 
   /* Layout */
   --nav-height: 80px;
   --container-max: 1200px;
   --gutter: 1.5rem;
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 *,
@@ -53,7 +61,7 @@ img {
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--text-secondary-color);
   text-decoration: none;
 }
 
@@ -67,7 +75,9 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--secondary-color);
+  /* Burdeos y no rosa: el indicador de foco tiene que alcanzar 3:1 y
+     el rosa sólo da 3.22 sobre crema. */
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
 

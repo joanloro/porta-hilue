@@ -13,8 +13,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(104, 4, 112, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(181, 95, 201, 0.12) 0%, transparent 45%);
+    radial-gradient(circle at 20% 50%, color-mix(in srgb, var(--secondary-color) 16%, transparent) 0%, transparent 45%),
+    radial-gradient(circle at 80% 80%, color-mix(in srgb, var(--secondary-color) 16%, transparent) 0%, transparent 45%);
   pointer-events: none;
 }
 
@@ -67,8 +67,8 @@
 
 .contactCard:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: rgba(181, 95, 201, 0.35);
-  box-shadow: 0 12px 28px rgba(104, 4, 112, 0.35);
+  border-color: color-mix(in srgb, var(--secondary-color) 55%, transparent);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-color) 22%, transparent);
 }
 
 .icon {
@@ -78,8 +78,8 @@
   height: 60px;
   border-radius: 999px;
   color: var(--text-secondary-color);
-  background: linear-gradient(135deg, rgba(104, 4, 112, 0.22), rgba(181, 95, 201, 0.22));
-  box-shadow: 0 10px 28px rgba(104, 4, 112, 0.35);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--burgundy) 16%, transparent), color-mix(in srgb, var(--rose) 26%, transparent));
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--primary-color) 18%, transparent);
 }
 
 .icon svg {

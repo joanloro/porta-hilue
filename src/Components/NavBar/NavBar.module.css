@@ -15,8 +15,8 @@
   padding: 0 var(--gutter);
   background: var(--bg-secondary-color);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(181, 95, 201, 0.22);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary-color) 30%, transparent);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--primary-color) 12%, transparent);
 }
 
 .logo {
@@ -99,8 +99,8 @@
   left: 0;
   right: 0;
   background: var(--bg-secondary-color);
-  border-bottom: 1px solid rgba(181, 95, 201, 0.22);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary-color) 30%, transparent);
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--primary-color) 16%, transparent);
 }
 
 .panelOpen {

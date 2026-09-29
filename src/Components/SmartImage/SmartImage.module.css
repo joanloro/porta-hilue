@@ -1,5 +1,9 @@
 .fallback {
-  background: linear-gradient(135deg, var(--bg-secondary-color), #26262f);
-  border: 1px solid rgba(181, 95, 201, 0.15);
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary-color),
+    color-mix(in srgb, var(--primary-color) 10%, var(--bg-secondary-color))
+  );
+  border: 1px solid color-mix(in srgb, var(--secondary-color) 35%, transparent);
   min-height: 120px;
 }

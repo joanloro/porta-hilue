@@ -18,6 +18,8 @@
   z-index: 0;
 }
 
+/* El texto de la portada va sobre la foto, no sobre el fondo crema: usa
+   --cream y no --text-color, que sobre este scrim sería ilegible. */
 .section::before {
   content: '';
   position: absolute;
@@ -25,9 +27,9 @@
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(18, 18, 20, 0.65),
-    rgba(18, 18, 20, 0.45) 40%,
-    rgba(18, 18, 20, 0.8)
+    color-mix(in srgb, var(--burgundy) 80%, transparent),
+    color-mix(in srgb, var(--burgundy) 58%, transparent) 40%,
+    color-mix(in srgb, var(--burgundy) 90%, transparent)
   );
 }
 
@@ -41,32 +43,33 @@
 
 .nombre {
   margin: 0 0 0.75rem;
-  color: var(--text-secondary-color);
+  color: var(--cream);
   font-size: clamp(1.75rem, 7vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 4px color-mix(in srgb, var(--burgundy) 85%, transparent);
 }
 
 .subtitulo {
   margin: 0 0 1.5rem;
-  color: var(--text-color);
+  color: var(--cream);
   font-size: clamp(0.8rem, 2.5vw, 1.1rem);
   font-weight: 600;
   letter-spacing: clamp(2px, 0.6vw, 6px);
   text-transform: uppercase;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  opacity: 0.85;
+  text-shadow: 1px 1px 3px color-mix(in srgb, var(--burgundy) 85%, transparent);
 }
 
 .rol {
   margin: 0;
-  color: var(--text-color);
+  color: var(--rose);
   font-size: clamp(1.1rem, 4vw, 1.8rem);
   font-style: italic;
   font-weight: 400;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 1px 3px color-mix(in srgb, var(--burgundy) 85%, transparent);
 }
 
 @media (max-width: 480px) {
