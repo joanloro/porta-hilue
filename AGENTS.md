@@ -40,6 +40,7 @@ GitHub Pages vía GitHub Actions. Cada push a `main` dispara `.github/workflows/
 - `public/.nojekyll` evita que Jekyll interprete los archivos del build.
 - La navegación es por anclas `#id`, no hay router, así que no hace falta `404.html` de fallback SPA.
 - `VITE_BASE` sobreescribe el `base` en el build, por si se necesita una URL distinta.
+- **Sólo puede haber un workflow que despliegue a Pages.** Todos comparten `concurrency: group: pages`, así que compiten por el mismo artifact y el último en terminar gana. No agregues un segundo workflow: el que GitHub sugiere al crear Pages desde una rama es el de **Jekyll**, y es incorrecto para una app Vite (publicaría el árbol de fuentes en vez del build). Para cambiar el flujo de despliegue, se edita `deploy.yml`.
 
 ## Estructura
 
